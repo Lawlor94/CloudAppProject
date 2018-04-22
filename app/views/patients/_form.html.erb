@@ -1,0 +1,57 @@
+<%= form_with(model: patient, local: true) do |form| %>
+  <% if patient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+
+      <ul>
+      <% patient.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :firstname %>
+    <%= form.text_field :firstname, id: :patient_firstname, class: "form-control", placeholder: "Enter First Name"  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lastname %>
+    <%= form.text_field :lastname, id: :patient_lastname, class: "form-control", placeholder: "Enter Last Name"  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dob %>
+    <%= form.text_field :dob, id: :patient_dob, class: "form-control", placeholder: "Enter Data of Birth"  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address, id: :patient_address, class: "form-control", placeholder: "Enter Address"  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phoneNo %>
+    <%= form.text_field :phoneNo, id: :patient_phoneNo, class: "form-control", placeholder: "Enter Phone Number"  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :infection %>
+    <%= form.text_field :infection, id: :patient_infection, class: "form-control", placeholder: "Enter Infection (if any)"  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :injury %>
+    <%= form.text_field :injury, id: :patient_injury, class: "form-control", placeholder: "Enter Injury (if any)"  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :observations %>
+    <%= form.text_field :observations, id: :patient_observations, class: "form-control", placeholder: "Enter Observations" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Create Patient', :class => 'btn btn-primary' %>
+  </div>
+<% end %>

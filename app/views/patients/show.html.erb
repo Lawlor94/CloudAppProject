@@ -1,0 +1,55 @@
+
+<div class="jumbotron">
+
+<p>
+  <strong>firstname:</strong>
+  <%= @patient.firstname %>
+</p>
+
+<p>
+  <strong>lastname:</strong>
+  <%= @patient.lastname %>
+</p>
+
+<p>
+  <strong>Dob:</strong>
+  <%= @patient.dob %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @patient.address %>
+</p>
+
+<p>
+  <strong>Phoneno:</strong>
+  <%= @patient.phoneNo %>
+</p>
+
+<p>
+  <strong>Infection:</strong>
+  <%= @patient.infection %>
+</p>
+
+<p>
+  <strong>Injury:</strong>
+  <%= @patient.injury %>
+</p>
+
+<p>
+  <strong>Observations:</strong>
+  <%= @patient.observations %>
+</p>
+
+<%= link_to 'Edit', edit_patient_path(@patient) %> |
+<%= link_to 'Back', patients_path %>
+
+<h1>Enter details to check severity</h1>
+<%= form_tag "/validate" do %>
+<%= text_field_tag :search_string %>
+<%= text_field_tag :age_string %>
+<%= submit_tag "Search" %>
+<p>Severity Ranking: </p>
+<p id="notice"><%= notice %></p>
+<% end %>
+</div>
